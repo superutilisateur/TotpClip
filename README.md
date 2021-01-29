@@ -16,4 +16,5 @@ I thank Gray Watson for his lib.
 (https://github.com/j256/java-two-factor-auth)
 
 I start form his otp generation method and I rewrote the parsing of the secret
-(b32 to ByteArray) to have a shorter (but probably less generic) solution integrated in One java file with less than 150 lines.
+(b32 to ByteArray) to have a shorter (but probably less generic) solution integrated 
+in a single java file with less than 150 lines.
