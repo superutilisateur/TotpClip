@@ -5,11 +5,13 @@ I wrote this program to have a unique class that I can deploy quickly and where 
 You just need a java 1.8 vm or higher and your base 32 secret (from google / vip access / ...).
 
 Usage:
+
 The program takes your secret as a parameter and generates an OPT. 
 It displays it, gives the remaining validity (2 seconds in advance), copy it to the clipboard and waits 8 seconds before stopping.
 WARNING: in case you use linux, the content of the clipboard is no longer available after the program has stopped (hence the delay of 8s).
 
 Note:
+
 Thanks to Gray Watson for his lib.
 (https://github.com/j256/java-two-factor-auth)
 
