@@ -12,7 +12,7 @@ WARNING: in case you use linux, the content of the clipboard is no longer availa
 
 Note:
 
-Thanks to Gray Watson for his lib.
+I thank Gray Watson for his lib.
 (https://github.com/j256/java-two-factor-auth)
 
 I start form his otp generation method and I rewrote the parsing of the secret
