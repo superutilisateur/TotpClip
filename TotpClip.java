@@ -58,29 +58,25 @@ public class TotpClip {
 			System.exit(0);
 		}
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
 		String secret = args[0];
-
 		String code = generateCurrentNumber(secret, System.currentTimeMillis() + 2000);
 		StringSelection clipselection = new StringSelection(code);
 		clipboard.setContents(clipselection, clipselection);
 
 		long diff = 30 - ((System.currentTimeMillis() / 1000) % 30);
 		System.out.println("Secret code (clipboard) = " + code + ", change in " + diff + " seconds");
+		
 		Thread.sleep(8000);
 	}
 
 	private static String generateCurrentNumber(String secret, long currentTimeMillis) throws GeneralSecurityException {
-
 		byte[] key = decodeBase32np(secret);
-
 		byte[] data = new byte[8];
 		long value = currentTimeMillis / 1000 / 30;
 		for (int i = 7; value > 0; i--) {
 			data[i] = (byte) (value & 0xFF);
 			value >>= 8;
 		}
-
 		// encrypt the data with the key and return the SHA1 of it in hex
 		SecretKeySpec signKey = new SecretKeySpec(key, "HmacSHA1");
 		// if this is expensive, could put in a thread-local
@@ -130,9 +126,7 @@ public class TotpClip {
 				idx -= 8;
 				value = buffer >> idx;
 				result.write((byte) value);
-
 			}
-
 		}
 		return result.toByteArray();
 	}
